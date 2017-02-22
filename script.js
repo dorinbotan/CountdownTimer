@@ -1,3 +1,5 @@
+alert("Прихвати с собой порошок. Говорят так интересней.");
+
 var expired = false;
 
 document.addEventListener('DOMContentLoaded', function () {
