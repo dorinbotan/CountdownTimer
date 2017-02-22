@@ -1,5 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
+var expired = false;
 
+document.addEventListener('DOMContentLoaded', function () {
+    
     $.ajax({
         url: "log.php",
 
@@ -36,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             if (t.total <= 0) {
                                 clearInterval(timeinterval);
+                                
+                                expired = true;
                             }
                         }
 
@@ -48,5 +52,26 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-
 });
+
+function checkPassword()
+{
+    if(!expired) 
+    {    
+        $.ajax({
+            url: 'checkPassword.php',
+            type: 'POST',
+            data: {pass: document.getElementById('password').value},
+
+            success: function(data) {       
+                if(data == 0)
+//                    win();
+                    alert("1");
+//                else
+//                    blame();
+            }
+        });
+    }
+    
+    return false;
+}

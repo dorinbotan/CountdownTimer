@@ -1,10 +1,10 @@
-#startTime {
+#submitButton {
     display: none;
 }
 
 body {
     text-align: center;
-    background: #00ECB9;
+    background: #ffc322;
     font-family: sans-serif;
     font-weight: 100;
 }
@@ -28,14 +28,14 @@ h1 {
 #clockdiv > div {
     padding: 10px;
     border-radius: 3px;
-    background: #00BF96;
+    background: #e6b01f;
     display: inline-block;
 }
 
 #clockdiv div > span {
     padding: 15px;
     border-radius: 3px;
-    background: #00816A;
+    background: #ffc322;
     display: inline-block;
 }
 
