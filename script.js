@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         success: function (result) {
             jQuery.get('time.txt', function(data) {    
-                var endTime = new Date((new Date(data)).getTime() + 30 * 60000);
+                var endTime = new Date((new Date(data)).getTime() + 45 * 60000);
                 
                 jQuery.get('time.php', function(data) {
                     var now = new Date(data);
@@ -62,15 +62,11 @@ function checkPassword()
     {    
         $.ajax({
             url: 'checkPassword.php',
-            type: 'POST',
             data: {pass: document.getElementById('password').value},
 
-            success: function(data) {       
-                if(data == 0)
-//                    win();
-                    alert("1");
-//                else
-//                    blame();
+            success: function(data) {     
+                if(data != -1 && data != '-1')
+                    document.write(data);
             }
         });
     }
